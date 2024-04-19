@@ -36,4 +36,6 @@ public class Venta {
     public void setCantidad(Double cantidad) {
         this.cantidad = cantidad;
     }
+
+
 }

@@ -16,7 +16,7 @@ public class Principal {
         listaArticulos.addArticuloToList(new Articulo("01","Arroz","0A",20.0,2000.0));
         listaArticulos.addArticuloToList(new Articulo("02","Harina","0A",30.0,2500.0));
 
-        listaArticulos.imprimirListaArticulos();
+        listaArticulos.imprimir();
 
     }
 }

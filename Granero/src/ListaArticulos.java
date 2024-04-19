@@ -20,7 +20,7 @@ public class ListaArticulos {
         this.articuloList = articuloList;
     }
 
-    public void imprimirListaArticulos(){
+    public void imprimir(){
         for (Articulo articulo:articuloList ) {
             System.out.println("Codigo: " + articulo.getCodigo());
             System.out.println("Nombre: " + articulo.getNombre());
