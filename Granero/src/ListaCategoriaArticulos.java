@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaCategoriaArticulos {
-    private List<CategoriaArticulo> categoriaArticuloList;
+    private static List<CategoriaArticulo> categoriaArticuloList;
 
     public ListaCategoriaArticulos() {
         categoriaArticuloList = new ArrayList<>();
@@ -32,5 +32,15 @@ public class ListaCategoriaArticulos {
     public void addCategoriaArticuloToList(CategoriaArticulo categoriaArticulo){
 
         this.categoriaArticuloList.add(categoriaArticulo);
+    }
+
+    //metodo  pasemos un articulo, y devuelva la categoria a la que pertenece
+    public static CategoriaArticulo buscarCategoriaArticulo(Articulo articulo){
+        for (CategoriaArticulo categoriaArticulo: categoriaArticuloList){
+            if(articulo.getCategoria() == categoriaArticulo.getCodigo()){
+                return  categoriaArticulo;
+            }
+        }
+        return null;
     }
 }

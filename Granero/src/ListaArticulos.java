@@ -4,6 +4,8 @@ import java.util.List;
 public class ListaArticulos {
     public List<Articulo> articuloList;
 
+
+
     public ListaArticulos() {
         articuloList = new ArrayList<>();
     }
@@ -21,13 +23,22 @@ public class ListaArticulos {
     }
 
     public void imprimir(){
+
         for (Articulo articulo:articuloList ) {
             System.out.println("Codigo: " + articulo.getCodigo());
             System.out.println("Nombre: " + articulo.getNombre());
             System.out.println("Categoria: " + articulo.getCategoria());
             System.out.println("Cantidad: " + articulo.getCantidad());
             System.out.println("Valor Compra: " + articulo.getValorCompra());
+
+            //crear un objeto categoriaArticulo temporal
+            CategoriaArticulo categoriaArticulo = new CategoriaArticulo();
+            categoriaArticulo = ListaCategoriaArticulos.buscarCategoriaArticulo(articulo);
+            System.out.println("Cod Categoria : " + categoriaArticulo.getCodigo());
+            System.out.println("Cod Categoria : " + categoriaArticulo.getGananacia());
+
         }
+
     }
 
     //metodo para agregar articulo a la lista

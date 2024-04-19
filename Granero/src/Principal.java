@@ -12,6 +12,13 @@ public class Principal {
         lArt.add(a2);
         ListaArticulos listaArticulos = new ListaArticulos(lArt); */
 
+        ListaCategoriaArticulos listaCategoriaArticulos = new ListaCategoriaArticulos();
+        listaCategoriaArticulos.addCategoriaArticuloToList(new CategoriaArticulo("0A","Alimentos",0.1));
+        listaCategoriaArticulos.addCategoriaArticuloToList(new CategoriaArticulo("0B","Aseo",0.15));
+        //listaCategoriaArticulos.imprimir();
+
+
+
         ListaArticulos listaArticulos = new ListaArticulos();
         listaArticulos.addArticuloToList(new Articulo("01","Arroz","0A",500.0,2300.0));
         listaArticulos.addArticuloToList(new Articulo("02","Cafe","0A",300.0,2500.0));
@@ -25,10 +32,6 @@ public class Principal {
         listaArticulos.addArticuloToList(new Articulo("10","Limpido","0B",300.0,1200.0));
         listaArticulos.imprimir();
 
-        ListaCategoriaArticulos listaCategoriaArticulos = new ListaCategoriaArticulos();
-        listaCategoriaArticulos.addCategoriaArticuloToList(new CategoriaArticulo("0A","Alimentos",0.1));
-        listaCategoriaArticulos.addCategoriaArticuloToList(new CategoriaArticulo("0B","Aseo",0.15));
-        listaCategoriaArticulos.imprimir();
 
         ListaVentas listaVentas = new ListaVentas();
         listaVentas.addVentaToList(new Venta("0-A","01",4.0));
@@ -43,17 +46,7 @@ public class Principal {
         listaVentas.addVentaToList(new Venta("0-C","10",4.0));
         listaVentas.addVentaToList(new Venta("0-D","02",4.0));
         listaVentas.addVentaToList(new Venta("0-D","05",3.0));
-
-
-
-/*
-
-
-
-0-D		05	3
-
-*/
-
+        //listaVentas.imprimir();
 
     }
 }
