@@ -34,8 +34,11 @@ public class ListaArticulos {
             //crear un objeto categoriaArticulo temporal
             CategoriaArticulo categoriaArticulo = new CategoriaArticulo();
             categoriaArticulo = ListaCategoriaArticulos.buscarCategoriaArticulo(articulo);
-            System.out.println("Cod Categoria : " + categoriaArticulo.getCodigo());
-            System.out.println("Cod Categoria : " + categoriaArticulo.getGananacia());
+            //System.out.println("Cod Categoria : " + categoriaArticulo.getCodigo());
+            //System.out.println("Cod Categoria : " + categoriaArticulo.getGananacia());
+            Double valorVenta = articulo.getValorCompra() +
+                    articulo.getValorCompra() * categoriaArticulo.getGananacia();
+            System.out.println("Valor de Venta :" + valorVenta);
 
         }
 
