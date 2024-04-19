@@ -30,6 +30,29 @@ public class Principal {
         listaCategoriaArticulos.addCategoriaArticuloToList(new CategoriaArticulo("0B","Aseo",0.15));
         listaCategoriaArticulos.imprimir();
 
+        ListaVentas listaVentas = new ListaVentas();
+        listaVentas.addVentaToList(new Venta("0-A","01",4.0));
+        listaVentas.addVentaToList(new Venta("0-A","03",3.0));
+        listaVentas.addVentaToList(new Venta("0-A","07",2.0));
+        listaVentas.addVentaToList(new Venta("0-A","09",3.0));
+        listaVentas.addVentaToList(new Venta("0-A","05",2.0));
+        listaVentas.addVentaToList(new Venta("0-B","05",5.0));
+        listaVentas.addVentaToList(new Venta("0-B","06",4.0));
+        listaVentas.addVentaToList(new Venta("0-C","08",3.0));
+        listaVentas.addVentaToList(new Venta("0-C","09",2.0));
+        listaVentas.addVentaToList(new Venta("0-C","10",4.0));
+        listaVentas.addVentaToList(new Venta("0-D","02",4.0));
+        listaVentas.addVentaToList(new Venta("0-D","05",3.0));
+
+
+
+/*
+
+
+
+0-D		05	3
+
+*/
 
 
     }
