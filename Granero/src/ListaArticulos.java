@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaArticulos {
-    public List<Articulo> articuloList;
+    public static List<Articulo> articuloList;
 
 
 
@@ -32,8 +32,8 @@ public class ListaArticulos {
             System.out.println("Valor Compra: " + articulo.getValorCompra());
 
             //crear un objeto categoriaArticulo temporal
-            CategoriaArticulo categoriaArticulo = new CategoriaArticulo();
-            categoriaArticulo = ListaCategoriaArticulos.buscarCategoriaArticulo(articulo);
+            CategoriaArticulo categoriaArticulo =
+                    ListaCategoriaArticulos.buscarCategoriaArticulo(articulo);
             //System.out.println("Cod Categoria : " + categoriaArticulo.getCodigo());
             //System.out.println("Cod Categoria : " + categoriaArticulo.getGananacia());
             Double valorVenta = articulo.getValorCompra() +
@@ -49,5 +49,18 @@ public class ListaArticulos {
         this.articuloList.add(articulo);
     }
 
+
+    //buscar un articulo por el codigo
+    //que debe retornar un objeto Articulo
+    //que debo pasarle un String en el parametro
+
+    public static Articulo buscarArticulo(String codigo){
+        for (Articulo a: articuloList){
+            if(codigo==a.getCodigo()){
+                return a;
+            }
+        }
+        return null;
+    }
 
 }

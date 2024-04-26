@@ -30,7 +30,7 @@ public class Principal {
         listaArticulos.addArticuloToList(new Articulo("08","Trigo","0A",300.0,1800.0));
         listaArticulos.addArticuloToList(new Articulo("09","Panela","0A",200.0,1500.0));
         listaArticulos.addArticuloToList(new Articulo("10","Limpido","0B",300.0,1200.0));
-        listaArticulos.imprimir();
+        //listaArticulos.imprimir();
 
 
         ListaVentas listaVentas = new ListaVentas();
@@ -46,7 +46,7 @@ public class Principal {
         listaVentas.addVentaToList(new Venta("0-C","10",4.0));
         listaVentas.addVentaToList(new Venta("0-D","02",4.0));
         listaVentas.addVentaToList(new Venta("0-D","05",3.0));
-        //listaVentas.imprimir();
+        listaVentas.imprimir();
 
     }
 }
