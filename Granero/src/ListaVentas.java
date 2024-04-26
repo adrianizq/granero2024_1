@@ -62,15 +62,14 @@ public class ListaVentas {
             if (codigoVentaActual == venta.getCodigo()){
 
                 sumaVenta+= subTotal;
+                System.out.println("Suma Venta --->=" + sumaVenta);
             }
             else{
-                System.out.println("Suma Venta --->=" + sumaVenta);
-                sumaVenta=0.0;
+
+                sumaVenta=subTotal;
                 codigoVentaActual= venta.getCodigo();
+                System.out.println("Suma Venta --->=" + sumaVenta);
             }
-
-
-
 
         }
     }
