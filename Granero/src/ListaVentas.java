@@ -31,6 +31,19 @@ public class ListaVentas {
             categoriaArticulo =
                     ListaCategoriaArticulos.buscarCategoriaArticulo(articulo);
             Double precioVenta =  articulo.getValorCompra() * (1 + categoriaArticulo.getGananacia());
+            System.out.println("Codigo: " + venta.getCodigo());
+            System.out.println("Codigo Articulo: " + venta.getCodigoArticulo());
+            System.out.println("Cantidad: " + venta.getCantidad());
+            //imprimir el nombre del articulo
+            //creemos un objeto de tipo articulo temporal
+
+            System.out.println("Nombre Articulo: " + articulo.getNombre());
+            System.out.println("Valor de Compra: " + articulo.getValorCompra());
+            //Encontrar la ganancia, pero la ganancia esta en
+            // la listaCategoriaArticulo
+            //Crear una categoriaArticulo
+
+            System.out.println("Ganancia: " + categoriaArticulo.getGananacia());
 
             // Creamos un objeto DecimalFormat con el patrón deseado
             DecimalFormat df = new DecimalFormat("#.#");
@@ -45,7 +58,9 @@ public class ListaVentas {
             System.out.println("SubTotal: " + subTotalForm);
             System.out.println("");
 
+
             if (codigoVentaActual == venta.getCodigo()){
+
                 sumaVenta+= subTotal;
             }
             else{
@@ -54,19 +69,6 @@ public class ListaVentas {
                 codigoVentaActual= venta.getCodigo();
             }
 
-            System.out.println("Codigo: " + venta.getCodigo());
-            System.out.println("Codigo Articulo: " + venta.getCodigoArticulo());
-            System.out.println("Cantidad: " + venta.getCantidad());
-            //imprimir el nombre del articulo
-            //creemos un objeto de tipo articulo temporal
-
-            System.out.println("Nombre Articulo: " + articulo.getNombre());
-            System.out.println("Valor de Compra: " + articulo.getValorCompra());
-            //Encontrar la ganancia, pero la ganancia esta en
-            // la listaCategoriaArticulo
-            //Crear una categoriaArticulo
-
-            System.out.println("Ganancia: " + categoriaArticulo.getGananacia());
 
 
 
