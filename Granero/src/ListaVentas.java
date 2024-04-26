@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,29 @@ public class ListaVentas {
             articulo = ListaArticulos.buscarArticulo(venta.getCodigoArticulo());
             System.out.println("Nombre Articulo: " + articulo.getNombre());
             System.out.println("Valor de Compra: " + articulo.getValorCompra());
+            //Encontrar la ganancia, pero la ganancia esta en
+            // la listaCategoriaArticulo
+            //Crear una categoriaArticulo
+            CategoriaArticulo categoriaArticulo = new CategoriaArticulo();
+            categoriaArticulo =
+                    ListaCategoriaArticulos.buscarCategoriaArticulo(articulo);
+            System.out.println("Ganancia: " + categoriaArticulo.getGananacia());
+
+
+            Double precioVenta =  articulo.getValorCompra() * (1 + categoriaArticulo.getGananacia());
+
+            // Creamos un objeto DecimalFormat con el patrón deseado
+            DecimalFormat df = new DecimalFormat("#.#");
+
+            // Formateamos el número utilizando el objeto DecimalFormat
+            String precioVentaForm = df.format(precioVenta);
+            System.out.println("Precio Venta: " + precioVentaForm);
+
+            Double subTotal = precioVenta * venta.getCantidad();
+
+            String subTotalForm = df.format(subTotal);
+            System.out.println("SubTotal: " + subTotalForm);
+            System.out.println("");
 
         }
     }
