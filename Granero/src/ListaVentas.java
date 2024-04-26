@@ -17,25 +17,19 @@ public class ListaVentas {
         this.ventaList = ventaList;
     }
     public void imprimir() {
+        double sumaVenta=0.0;
+
+        String codigoVentaActual;
+        //obtener el codigo de la primera venta de ventaList
+        codigoVentaActual = ventaList.get(0).getCodigo();
+
         for (Venta venta : ventaList) {
-            System.out.println("Codigo: " + venta.getCodigo());
-            System.out.println("Codigo Articulo: " + venta.getCodigoArticulo());
-            System.out.println("Cantidad: " + venta.getCantidad());
-            //imprimir el nombre del articulo
-            //creemos un objeto de tipo articulo temporal
+
             Articulo articulo = new Articulo();
             articulo = ListaArticulos.buscarArticulo(venta.getCodigoArticulo());
-            System.out.println("Nombre Articulo: " + articulo.getNombre());
-            System.out.println("Valor de Compra: " + articulo.getValorCompra());
-            //Encontrar la ganancia, pero la ganancia esta en
-            // la listaCategoriaArticulo
-            //Crear una categoriaArticulo
             CategoriaArticulo categoriaArticulo = new CategoriaArticulo();
             categoriaArticulo =
                     ListaCategoriaArticulos.buscarCategoriaArticulo(articulo);
-            System.out.println("Ganancia: " + categoriaArticulo.getGananacia());
-
-
             Double precioVenta =  articulo.getValorCompra() * (1 + categoriaArticulo.getGananacia());
 
             // Creamos un objeto DecimalFormat con el patrón deseado
@@ -50,6 +44,31 @@ public class ListaVentas {
             String subTotalForm = df.format(subTotal);
             System.out.println("SubTotal: " + subTotalForm);
             System.out.println("");
+
+            if (codigoVentaActual == venta.getCodigo()){
+                sumaVenta+= subTotal;
+            }
+            else{
+                System.out.println("Suma Venta --->=" + sumaVenta);
+                sumaVenta=0.0;
+                codigoVentaActual= venta.getCodigo();
+            }
+
+            System.out.println("Codigo: " + venta.getCodigo());
+            System.out.println("Codigo Articulo: " + venta.getCodigoArticulo());
+            System.out.println("Cantidad: " + venta.getCantidad());
+            //imprimir el nombre del articulo
+            //creemos un objeto de tipo articulo temporal
+
+            System.out.println("Nombre Articulo: " + articulo.getNombre());
+            System.out.println("Valor de Compra: " + articulo.getValorCompra());
+            //Encontrar la ganancia, pero la ganancia esta en
+            // la listaCategoriaArticulo
+            //Crear una categoriaArticulo
+
+            System.out.println("Ganancia: " + categoriaArticulo.getGananacia());
+
+
 
         }
     }
